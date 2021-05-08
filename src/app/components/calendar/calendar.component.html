@@ -1,13 +1,41 @@
-<div class="container-fluid mt-md-5">
+<div class="container-fluid mt-md-5 mt-4">
 <div class="row">
-    <!--TODO: DISCOVER HOW TO REMOVE PX-->
-    <div class="col-sm-12 col-md-7">
-
-        PSICOLOGIST CONTENT
+    <div class="col-sm-12 col-md-6 px-0 ms-md-5">
+        <div class="row">
+                <div class="col-12">
+                    <img src="/assets/img/user.png" class="img-fluid float-start user-img" alt="...">
+                    <h6 class="professional-name-label">Professional name</h6>
+                    <span class="job-description-label">PSICOLOGIST</span>
+                    <span class="place-label">Lisbon</span>
+                    <p>
+                        <img *ngFor="let star of starQuantity(5)" src="/assets/img/star.png" class="img-fluid review-star">
+                        <span class="review-label">({{reviewQuantity}} reviews)</span>
+                    </p>
+                    <!--TODO: Adjust style in price label-->
+                    <p>
+                        R$ 160/ 50 Minutes
+                    </p>
+                </div>
+                
+                <div class="col-12 professional-summary-label">
+                    Mussum Ipsum, cacilds vidis litro abertis. 
+                    Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. 
+                    Leite de capivaris, leite de mula manquis sem cabeça. 
+                    Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. 
+                    Suco de cevadiss deixa as pessoas mais interessantis.
+Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. 
+Aenean sit amet nisi. 
+Paisis, filhis, espiritis santis. 
+Copo furadis é disculpa de bebadis, arcu quam euismod magna. 
+Sapien in monti palavris qui num significa nadis i pareci latim.
+                </div>
+        </div>
+      
+        
     </div>
 
 
-    <div class="col-sm-12 col-md-5">
+    <div class="col-sm-12 col-md-4">
         CALENDAR CONTENT
     </div>
 </div>
