@@ -1,41 +1,33 @@
-$primary-name-color: #5C6267;
-$job-description-color: #568EC6;
-
-$description-label-default-size: 12px;
-
-.user-img {
-    width: 120px;
+.calendar-header{
+    color: #FFFF;
+    background: #007BDB;
+    .header-title {
+        font-weight: 700;
+        display: block;
+    }
 }
 
-.professional-name-label {
-color: $primary-name-color;
+
+.next-prev-img {
+    width: 20px;
+    padding-top: 6px;
 }
 
-.job-description-label {
-    color: $job-description-color;
-    font-size: $description-label-default-size;
-    padding-right: 5px;
-    font-weight: bold;
-    border-right: solid 1px black;
+.day-marker {
+    color: #868A8B;
+    .week-day-marker{
+        display: block;
+        font-size: 8px;
+    }
+    .date-marker {
+        font-size: 12px;
+    }
 }
 
-.review-star {
-    width: 10px;
-}
-
-.place-label {
-font-size: $description-label-default-size;
-padding-left: 5px;
-}
-
-.review-label {
-    font-size: $description-label-default-size;
-    padding-left: 3px;
-}
-
-.professional-summary-label {
-    font-size: $description-label-default-size;
-    color: $primary-name-color;
-    padding-left: 20px;
-
+@media (max-width: 576px) {
+    .day-marker {
+        .date-marker{
+            font-size:8px;
+        }
+    }
 }
