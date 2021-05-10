@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 px-0 ">
+        <div *ngIf="avaliableDates" class="col-sm-12 col-md-4 px-0 ">
             <div class="card text-center scheduler">
                 <div class="card-header calendar-header">
                     <span class="header-title">Schedule your session</span>
@@ -17,22 +17,11 @@
                         <div class="col-2">
                             <img src="/assets/img/previous.png" class="next-prev-img" alt="" srcset="">
                         </div>
-                        <div class="col-2 day-marker">
-                            <span class="week-day-marker">MON</span>
-                            <span class="date-marker">AUG 19</span>
+                        <div *ngFor="let scheduleDate of avaliableDates" class="col-2 day-marker">
+                            <span class="week-day-marker">{{scheduleDate.month}}</span>
+                            <span class="date-marker">{{scheduleDate.dayName}} {{scheduleDate.dayDate}}</span>
                         </div>
-                        <div class="col-2 day-marker">
-                            <span class="week-day-marker">MON</span>
-                            <span class="date-marker">AUG 19</span>
-                        </div>
-                        <div class="col-2 day-marker">
-                            <span class="week-day-marker">MON</span>
-                            <span class="date-marker">AUG 19</span>
-                        </div>
-                        <div class="col-2 day-marker">
-                            <span class="week-day-marker">MON</span>
-                            <span class="date-marker">AUG 19</span>
-                        </div>
+                    
                         <div class="col-2">
                             <img src="/assets/img/next.png" class="next-prev-img" alt="" srcset="">
                         </div>
@@ -41,47 +30,11 @@
                 </div>
             </div>
 
-            <div class="card day-marker-body mt-md-5">
-                <div class="row text-center px-md-0">
+            <div class="text-center day-marker-body schedule-card   ">
 
-                    <div class="col-3">
-                        <span class="schedule-hour">
-                            18:00
-
-                        </span>
-                    </div>
-
-                    <div class="col-3">
-                        <span class="schedule-hour">
-                            18:00
-
-                        </span>
-                    </div>
-
-                    <div class="col-3">
-                        <span class="schedule-hour">
-                            18:00
-
-                        </span>
-                    </div>
-
-                    <div class="col-3">
-                        <span class="schedule-hour">
-                            18:00
-
-                        </span>
-                    </div>
-
-
-                    <div class="col-3">
-                        <span class="schedule-hour">
-                            18:00
-
-                        </span>
-                    </div>
-
-                </div>
-
+                <button  *ngFor="let hours of avaliableHours" (click)="markSchedule(hours)" [ngClass]="hours.avaliable ? 'schedule-hour-button' : 'busy-scheduler'">{{hours.hour}}</button>
+                     
+                   
             </div>
         </div>
     </div>

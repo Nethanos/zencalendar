@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ScheduleDate } from 'src/app/domain/ScheduleDate';
+import { ScheduleHour } from 'src/app/domain/ScheduleHour';
+import { ScheduleDateService } from '../services/schedule-date.service';
 
 @Component({
   selector: 'zen-calendar',
@@ -7,15 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private schedulerService: ScheduleDateService) { }
 
-  reviewQuantity = 20;
+  avaliableDates: Array<ScheduleDate>;
 
-  starQuantity(quantity: number): Array<number> {
-    return new Array(quantity);
+  avaliableHours = [];
+
+   ngOnInit(): void {
+     this.schedulerService.getAvaliableDates().subscribe(scheduleDateArray => {
+       this.mapSchedulerDatesAndHours(scheduleDateArray);
+
+        console.log(this.avaliableHours);
+      })
+     
   }
 
-  ngOnInit(): void {
+
+  markSchedule(hour: ScheduleHour){
+    this.schedulerService.markSchedule(hour).subscribe(response => 
+      this.mapSchedulerDatesAndHours(response)
+      );
+  }
+
+  mapSchedulerDatesAndHours(avaliableDates: Array<ScheduleDate>){
+    this.avaliableDates = avaliableDates;
+    this.avaliableHours = this.avaliableDates
+    .flatMap((scheduleDate) => scheduleDate.hours)
   }
 
 }
