@@ -14,25 +14,23 @@ export class CalendarComponent implements OnInit {
 
   avaliableDates: Array<ScheduleDate>;
 
-  avaliableHours = [];
+  avaliableHours: Array<ScheduleHour> = [];
 
    ngOnInit(): void {
      this.schedulerService.getAvaliableDates().subscribe(scheduleDateArray => {
        this.mapSchedulerDatesAndHours(scheduleDateArray);
-
-        console.log(this.avaliableHours);
       })
      
   }
 
 
-  markSchedule(hour: ScheduleHour){
+  markSchedule(hour: ScheduleHour): void {
     this.schedulerService.markSchedule(hour).subscribe(response => 
       this.mapSchedulerDatesAndHours(response)
       );
   }
 
-  mapSchedulerDatesAndHours(avaliableDates: Array<ScheduleDate>){
+  mapSchedulerDatesAndHours(avaliableDates: Array<ScheduleDate>): void{
     this.avaliableDates = avaliableDates;
     this.avaliableHours = this.avaliableDates
     .flatMap((scheduleDate) => scheduleDate.hours)

@@ -70,15 +70,10 @@ $busySchedulerBackgroun: #afb1b4;
     padding-top: 6px;
 }
 
-.day-marker {
-    color: #868A8B;
-    .week-day-marker{
-        display: block;
-        font-size: 8px;
-    }
-    .date-marker {
-        font-size: 12px;
-    }
+
+.navigate-next-icon {
+    color: #4B5459;
+    padding-top: 8px;
 }
 
 @media (max-width: 576px) {
