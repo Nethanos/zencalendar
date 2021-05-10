@@ -20,6 +20,12 @@ color: $primary-name-color;
     border-right: solid 1px black;
 }
 
+.value-label {
+    font-size: $description-label-default-size;
+    font-weight: bold;
+    color: $primary-name-color;
+}
+
 .review-star {
     width: 10px;
 }
@@ -35,8 +41,9 @@ padding-left: 5px;
 }
 
 .professional-summary-label {
-    font-size: $description-label-default-size;
+    font-size: 14px;
     color: $primary-name-color;
     padding-left: 20px;
+    font-weight: bold;
 
 }
